@@ -12,8 +12,9 @@
   /* Others */
   --border-light-cl: #ffffff;
   --btn-radius: 25px;
-  --anim-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --anim-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-shadow-slow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-bg-slow: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 h1,
 h2,
@@ -162,6 +163,7 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--secondary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .info:hover,
@@ -223,9 +225,7 @@ body {
 
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
-      cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--anim-shadow-slow);
 }
 
 .hero-btn::before,
@@ -460,7 +460,9 @@ body {
   align-items: center;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
   color: #afb1b8;
+  transition: var(--anim-bg-slow);
 }
 
 .team-social__link:hover,
@@ -506,6 +508,8 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:focus,
@@ -602,8 +606,11 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
   color: #ffffff;
   background-color: #ffffff10;
+
+  transition: var(--anim-bg-slow);
 }
 
 .footer-list__link:hover,
@@ -615,7 +622,7 @@ body {
 .footer-list__icons {
   fill: currentColor;
 }
-/*  END Social block  */
+/*  Конец Social block  */
 
 .footer-block__contacts {
 }
@@ -643,7 +650,7 @@ body {
 
 .page-block {
   background: var(--white-color);
-  transition: box-shadow 300ms ease-out;
+  transition: var(--anim-shadow-slow);
   text-decoration: none;
 }
 
